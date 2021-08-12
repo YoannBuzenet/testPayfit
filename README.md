@@ -4,8 +4,8 @@ Hello, my name is Yoann. I hope you'll enjoy this test !
 
 ## Start the App
 
-### Git clone
+### `Git clone`
 
-### Npm install
+### `Npm install`
 
-### Npm start
+### `Npm start`
