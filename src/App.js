@@ -1,16 +1,24 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { useContext } from "react";
-import axios from "axios";
+import { useContext, useEffect } from "react";
+import commentsAPI from "./services/comments";
+import usersAPI from "./services/users";
+import postsAPI from "./services/posts";
 
 function App() {
-  //get all posts
+  useEffect(() => {
+    const allPosts = postsAPI.getAllPosts();
+    const allUsers = usersAPI.getAllUsers();
+    const allComments = commentsAPI.getAllComments();
 
-  // get all users
-
-  //get all comments
-
-  console.log("bro", process.env.REACT_APP_API_URL);
+    Promise.all([allPosts, allUsers, allComments]).then(
+      ([allPosts, allUsers, allComments]) => {
+        console.log("allPosts", allPosts);
+        console.log("allUsers", allUsers);
+        console.log("allComments", allComments);
+      }
+    );
+  }, []);
 
   return (
     <div className="App">
