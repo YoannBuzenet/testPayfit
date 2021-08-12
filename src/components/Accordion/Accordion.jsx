@@ -31,7 +31,12 @@ export default function SimpleAccordion({ arrayOfItems }) {
             <Typography className={classes.heading}>{item.name}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>{item.body}</Typography>
+            <Typography>
+              <div>
+                <p>{item.body}</p>
+                <p>{item.email}</p>
+              </div>
+            </Typography>
           </AccordionDetails>
         </Accordion>
       ))}

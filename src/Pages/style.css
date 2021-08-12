@@ -1,3 +1,8 @@
+h1 {
+  font-size: 5rem;
+  text-align: center;
+}
+
 .postContainer {
   display: flex;
   flex-direction: column;
