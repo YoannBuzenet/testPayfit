@@ -10,6 +10,10 @@
   cursor: pointer;
 }
 
+.postContent .author:hover {
+  text-decoration: underline;
+}
+
 .backToHome {
   cursor: pointer;
 }
