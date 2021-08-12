@@ -1,8 +1,17 @@
-const Post = ({ post }) => {
+import { useContext } from "react";
+import GlobalInformationsContext from "../../../context/globalContext";
+
+const Post = ({ match }) => {
+  const { globalInformations } = useContext(GlobalInformationsContext);
+
+  const currentPost = globalInformations.posts.find(
+    (post) => post.id == match.params.id
+  );
+
   return (
     <div>
-      <p>title {post.title}</p>
-      <p>body {post.body}</p>
+      <p>{currentPost?.title}</p>
+      <p>{currentPost?.body}</p>
     </div>
   );
 };

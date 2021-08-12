@@ -11,11 +11,12 @@ import usersAPI from "./services/users";
 import postsAPI from "./services/posts";
 
 // Components
-import Comments from "./components/Comments/Comments/Comments";
 import Posts from "./components/Posts/Posts/Posts";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Comment from "./components/Comments/Comment/Comment";
+import Home from "./Pages/Home";
+import Post from "./components/Posts/Post/Post";
 
 function App() {
   //State initialization for futures Contexts
@@ -32,7 +33,6 @@ function App() {
   };
 
   useEffect(() => {
-    console.log("test yo");
     const allPosts = postsAPI.getAllPosts();
     const allUsers = usersAPI.getAllUsers();
     const allComments = commentsAPI.getAllComments();
@@ -55,17 +55,13 @@ function App() {
           <Route
             path="/"
             exact
-            render={(props) => (
-              <div className="App">
-                <header className="App-header"></header>
-                <div>
-                  <Posts />
-                  <p>Ok</p>
-                </div>
-              </div>
-            )}
+            render={({ history }) => <Home history={history} />}
           />
-          <Route path="/comment" exact render={(props) => <Comment />} />
+          <Route
+            path="/post/:id"
+            exact
+            render={({ match }) => <Post match={match} />}
+          />
         </Switch>
       </Router>
     </GlobalContext.Provider>
