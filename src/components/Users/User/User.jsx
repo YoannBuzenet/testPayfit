@@ -7,9 +7,15 @@ const User = ({ match, history }) => {
 
   const userId = match.params.id;
 
+  const user = globalInformations.users?.[userId];
+
   return (
     <div className="container">
-      <h1>{globalInformations.users?.[userId]?.name}</h1>
+      <h1>{user?.name}</h1>
+
+      <p>Username : {user?.username}</p>
+      <p>Email : {user?.email}</p>
+      <p>Website : {user?.website}</p>
 
       <div className="backToHome">
         <ContainedButtons

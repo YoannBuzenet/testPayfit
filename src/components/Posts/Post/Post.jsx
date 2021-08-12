@@ -33,7 +33,7 @@ const Post = ({ match, history }) => {
             text={utils.capitalizeFirstLetter(currentPost?.body)}
           />
         </div>
-        <p>
+        <p className="authorContainer">
           By{" "}
           <span
             className="author"
