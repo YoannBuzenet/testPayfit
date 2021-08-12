@@ -60,7 +60,9 @@ function App() {
           <Route
             path="/post/:id"
             exact
-            render={({ match }) => <Post match={match} />}
+            render={({ match, history }) => (
+              <Post match={match} history={history} />
+            )}
           />
         </Switch>
       </Router>

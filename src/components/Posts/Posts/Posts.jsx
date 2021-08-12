@@ -1,17 +1,15 @@
 import { useContext } from "react";
 import GlobalInformationsContext from "../../../context/globalContext";
+import "./style.css";
 
 const Posts = ({ history }) => {
   const { globalInformations } = useContext(GlobalInformationsContext);
-
-  // Que le titre du post
-  // Voir le post
 
   return (
     <>
       {globalInformations.posts.map((post) => (
         <div onClick={(e) => history.push(`/post/${post.id}`)}>
-          {post.title}
+          <span className="postTitle">{post.title}</span>
         </div>
       ))}
     </>
