@@ -1,7 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useContext } from "react";
+import axios from "axios";
 
 function App() {
+  //get all posts
+
+  // get all users
+
+  //get all comments
+
+  console.log("bro", process.env.REACT_APP_API_URL);
+
   return (
     <div className="App">
       <header className="App-header">
