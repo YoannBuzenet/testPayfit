@@ -10,6 +10,10 @@ import commentsAPI from "./services/comments";
 import usersAPI from "./services/users";
 import postsAPI from "./services/posts";
 
+// Components
+import Comments from "./components/Comments/Comments/Comments";
+import Posts from "./components/Posts/Posts/Posts";
+
 function App() {
   //State initialization for futures Contexts
   const [globalInformations, setGlobalInformations] = useState({});
@@ -39,20 +43,11 @@ function App() {
   return (
     <GlobalContext.Provider value={globalInformationsDefinition}>
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <header className="App-header"></header>
+        <div>
+          <Posts />
+          <p>Ok</p>
+        </div>
       </div>
     </GlobalContext.Provider>
   );

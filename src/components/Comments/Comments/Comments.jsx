@@ -1,7 +1,16 @@
-const Comments = (arrayOfComments) => {
-  // get data from context
+import { useContext } from "react";
+import GlobalInformationsContext from "../../../context/globalContext";
 
-  return <>Comments</>;
+const Comments = (arrayOfComments) => {
+  const { globalInformations } = useContext(GlobalInformationsContext);
+
+  return (
+    <>
+      {globalInformations.comments.map((comment) => (
+        <p>{comment.name}</p>
+      ))}
+    </>
+  );
 };
 
 export default Comments;

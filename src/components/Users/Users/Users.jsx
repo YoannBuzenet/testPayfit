@@ -1,5 +1,9 @@
+import { useContext } from "react";
+import GlobalInformationsContext from "../../../context/globalContext";
+
 const Users = (arrayOfUsers) => {
-  // get data from context
+  const { globalInformations } = useContext(GlobalInformationsContext);
+
   return <>Users</>;
 };
 
