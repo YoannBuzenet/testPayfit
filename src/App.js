@@ -18,6 +18,9 @@ import Comment from "./components/Comments/Comment/Comment";
 import Home from "./Pages/Home";
 import Post from "./components/Posts/Post/Post";
 
+// Utils
+import utils from "./services/utils";
+
 function App() {
   //State initialization for futures Contexts
   const [globalInformations, setGlobalInformations] = useState({
@@ -40,7 +43,7 @@ function App() {
     Promise.all([allPosts, allUsers, allComments]).then(
       ([allPosts, allUsers, allComments]) => {
         setGlobalInformations({
-          users: allUsers,
+          users: utils.transformArrayIntoDictionnaryWithKey(allUsers),
           comments: allComments,
           posts: allPosts,
         });

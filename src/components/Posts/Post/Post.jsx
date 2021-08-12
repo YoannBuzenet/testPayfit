@@ -4,6 +4,8 @@ import SimpleAccordion from "../../Accordion/Accordion";
 import ContainedButtons from "../../Button/Button";
 import SimplePaper from "../../Paper/Paper";
 
+import utils from "../../../services/utils";
+
 import "./style.css";
 
 const Post = ({ match, history }) => {
@@ -21,9 +23,12 @@ const Post = ({ match, history }) => {
   return (
     <div className="container">
       <div className="postContent">
-        <h1>{currentPost?.title}</h1>
+        <h1>{utils.capitalizeFirstLetter(currentPost?.title)}</h1>
         <div className="postBody">
-          <SimplePaper elevation={3} text={currentPost?.body} />
+          <SimplePaper
+            elevation={3}
+            text={utils.capitalizeFirstLetter(currentPost?.body)}
+          />
         </div>
       </div>
 
