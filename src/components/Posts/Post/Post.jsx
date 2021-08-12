@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import GlobalInformationsContext from "../../../context/globalContext";
+import SimpleAccordion from "../../Accordion/Accordion";
 import "./style.css";
 
 const Post = ({ match, history }) => {
@@ -22,15 +23,7 @@ const Post = ({ match, history }) => {
       </div>
 
       <div className="postComment">
-        {comments.map((comment) => {
-          return (
-            <div>
-              <p>{comment.name}</p>
-              <p>{comment.body}</p>
-              <p>{comment.email}</p>
-            </div>
-          );
-        })}
+        <SimpleAccordion arrayOfItems={comments} />
       </div>
 
       <div className="backToHome">
