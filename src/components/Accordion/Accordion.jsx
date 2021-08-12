@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import utils from "../../services/utils";
+import "./style.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heading: {
     fontSize: theme.typography.pxToRem(25),
-    fontWeight: theme.typography.fontWeightRegular,
+    fontWeight: theme.typography.fontWeightBold,
   },
 }));
 
@@ -36,7 +37,7 @@ export default function SimpleAccordion({ arrayOfItems }) {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              <div>
+              <div className="accordeonContent">
                 <p>{utils.capitalizeFirstLetter(item.body)}</p>
                 <p>By {item.email}</p>
               </div>
