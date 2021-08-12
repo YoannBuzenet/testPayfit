@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import GlobalInformationsContext from "../../../context/globalContext";
 import SimpleAccordion from "../../Accordion/Accordion";
+import SimplePaper from "../../Paper/Paper";
+
 import "./style.css";
 
 const Post = ({ match, history }) => {
@@ -17,12 +19,15 @@ const Post = ({ match, history }) => {
 
   return (
     <div className="container">
-      <div>
-        <p>{currentPost?.title}</p>
-        <p>{currentPost?.body}</p>
+      <div className="postContent">
+        <h1>{currentPost?.title}</h1>
+        <div className="postBody">
+          <SimplePaper elevation={3} text={currentPost?.body} />
+        </div>
       </div>
 
       <div className="postComment">
+        <p>Comments</p>
         <SimpleAccordion arrayOfItems={comments} />
       </div>
 
