@@ -6,6 +6,8 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
+import utils from "../../services/utils";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -28,13 +30,15 @@ export default function SimpleAccordion({ arrayOfItems }) {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography className={classes.heading}>{item.name}</Typography>
+            <Typography className={classes.heading}>
+              {utils.capitalizeFirstLetter(item.name)}
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
               <div>
-                <p>{item.body}</p>
-                <p>{item.email}</p>
+                <p>{utils.capitalizeFirstLetter(item.body)}</p>
+                <p>By {item.email}</p>
               </div>
             </Typography>
           </AccordionDetails>

@@ -8,6 +8,8 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
+import utils from "../../services/utils";
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -29,7 +31,7 @@ export default function ImgMediaCard({ item, author, pictureURL }) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {item.title}
+            {utils.capitalizeFirstLetter(item.title)}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             By {author}
