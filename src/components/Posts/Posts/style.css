@@ -1,3 +1,14 @@
 .postTitle {
   cursor: pointer;
 }
+
+.postsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.postsContainer > div {
+  width: 250px;
+  margin: 10px 25px;
+}
