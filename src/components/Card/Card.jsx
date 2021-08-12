@@ -26,7 +26,7 @@ export default function ImgMediaCard({ item, author, pictureURL }) {
           component="img"
           alt="Contemplative Reptile"
           height="140"
-          image="https://picsum.photos/200/300"
+          image={pictureURL}
           title="Contemplative Reptile"
         />
         <CardContent>

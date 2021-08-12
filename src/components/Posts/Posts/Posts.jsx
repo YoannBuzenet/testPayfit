@@ -9,11 +9,12 @@ const Posts = ({ history }) => {
 
   return (
     <div className="postsContainer">
-      {globalInformations.posts.map((post) => (
+      {globalInformations.posts.map((post, index) => (
         <div onClick={(e) => history.push(`/post/${post.id}`)}>
           <ImgMediaCard
             item={post}
             author={globalInformations.users[post.userId].email}
+            pictureURL={`https://picsum.photos/id/${index + 10}/200/300`}
           />
         </div>
       ))}
