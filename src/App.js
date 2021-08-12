@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
 
@@ -11,13 +10,12 @@ import usersAPI from "./services/users";
 import postsAPI from "./services/posts";
 
 // Components
-import Posts from "./components/Posts/Posts/Posts";
-
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Comment from "./components/Comments/Comment/Comment";
 import Home from "./Pages/Home";
 import Post from "./components/Posts/Post/Post";
 import User from "./components/Users/User/User";
+
+// Libs
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Utils
 import utils from "./services/utils";
