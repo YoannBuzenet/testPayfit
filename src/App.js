@@ -17,6 +17,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Comment from "./components/Comments/Comment/Comment";
 import Home from "./Pages/Home";
 import Post from "./components/Posts/Post/Post";
+import User from "./components/Users/User/User";
 
 // Utils
 import utils from "./services/utils";
@@ -65,6 +66,13 @@ function App() {
             exact
             render={({ match, history }) => (
               <Post match={match} history={history} />
+            )}
+          />
+          <Route
+            path="/user/:id"
+            exact
+            render={({ match, history }) => (
+              <User match={match} history={history} />
             )}
           />
         </Switch>

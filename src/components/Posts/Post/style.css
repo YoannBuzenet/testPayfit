@@ -2,6 +2,10 @@
   margin-bottom: 5rem;
 }
 
+.postContent .author {
+  cursor: pointer;
+}
+
 .backToHome {
   cursor: pointer;
 }

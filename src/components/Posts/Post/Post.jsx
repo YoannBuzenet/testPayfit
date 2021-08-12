@@ -15,6 +15,9 @@ const Post = ({ match, history }) => {
     (post) => post.id == match.params.id
   );
 
+  //User for that post
+  const user = globalInformations.users?.[currentPost.userId];
+
   // Getting Comments for that post
   const comments = globalInformations.comments.filter(
     (comment) => comment.postId == match.params.id
@@ -30,6 +33,15 @@ const Post = ({ match, history }) => {
             text={utils.capitalizeFirstLetter(currentPost?.body)}
           />
         </div>
+        <p>
+          By{" "}
+          <span
+            className="author"
+            onClick={(e) => history.push("/user/" + user.id)}
+          >
+            {user.name}
+          </span>
+        </p>
       </div>
 
       <div className="postComment">
