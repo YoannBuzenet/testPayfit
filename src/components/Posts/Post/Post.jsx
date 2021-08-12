@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import GlobalInformationsContext from "../../../context/globalContext";
 import SimpleAccordion from "../../Accordion/Accordion";
+import ContainedButtons from "../../Button/Button";
 import SimplePaper from "../../Paper/Paper";
 
 import "./style.css";
@@ -32,7 +33,10 @@ const Post = ({ match, history }) => {
       </div>
 
       <div className="backToHome">
-        <p onClick={(e) => history.push("/")}>Back to Home</p>
+        <ContainedButtons
+          onClickFunction={(e) => history.push("/")}
+          text={"Back to Home"}
+        />
       </div>
     </div>
   );
